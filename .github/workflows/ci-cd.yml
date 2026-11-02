@@ -32,11 +32,11 @@ jobs:
           push: true
           tags: |
               ghcr.io/${{ github.repository_owner }}/taskmate:latest
-              ghcr.io/${{ github.repository_owner }}/taskmate:${{ github.sha }}
+          ghcr.io/${{ github.repository_owner }}/taskmate:${{ github.sha }}
 
       - name: Update Kubernetes Deployment
         run: |
-          sed -i "s|image: .*|image: ghcr.io/${GITHUB_REPOSITORY}:${GITHUB_SHA}|" deployment.yaml
+          sed -i "s|image: .*|image: ghcr.io/${GITHUB_REPOSITORY_OWNER}/taskmate:${GITHUB_SHA}|" deployment.yaml
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
