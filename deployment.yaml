@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: taskmate
-          image: ghcr.io/janhaviumbre/TaskMate:df0056a3abc800aa8d24659b79b429f7d271dee8
+          image: ghcr.io/janhaviumbre/taskmate:d932959d99b0098f9f42c1b1a4afc3b353630cc6
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 5000
