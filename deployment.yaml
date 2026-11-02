@@ -1,0 +1,26 @@
+
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: taskmate-deployment
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: taskmate
+
+  template:
+    metadata:
+      labels:
+        app: taskmate
+
+    spec:
+      containers:
+        - name: taskmate
+          image: taskmate:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5000
